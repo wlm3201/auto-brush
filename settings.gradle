@@ -1,0 +1,18 @@
+pluginManagement {
+	repositories {
+		maven {
+			name = 'Fabric'
+			url = 'https://maven.fabricmc.net/'
+		}
+		mavenCentral()
+		gradlePluginPortal()
+	}
+}
+
+rootProject.name = 'auto-brush'
+
+new File(settingsDir, 'versions').eachDir { dir ->
+	def projectName = ':v' + dir.name.replace('.', '_').replace('-', '_')
+	include projectName
+	project(projectName).projectDir = dir
+}

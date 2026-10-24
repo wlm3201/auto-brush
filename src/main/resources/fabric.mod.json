@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "autobrush",
+	"version": "${version}",
+	"name": "Auto Brush",
+	"description": "Suspicious-block archaeology assistant: auto-brushes, identifies the contents, digs up junk, and draws outlines.",
+	"authors": ["wlm3201"],
+	"contact": {
+		"sources": "https://github.com/wlm3201/auto-brush"
+	},
+	"license": "MIT",
+	"icon": "assets/autobrush/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": ["com.autobrush.client.AutoBrushClient"],
+		"modmenu": ["com.autobrush.client.ModMenuIntegration"]
+	},
+	"mixins": [
+		{
+			"config": "autobrush.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"java": ">=25",
+		"minecraft": "${minecraft_dependency}",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	}
+}
